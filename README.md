@@ -31,7 +31,8 @@ so you listen there while the terminal is the remote control.
 ## What it does
 
 - **Your library**: songs, artists, albums, genres, liked songs, recently and most played, playlists, search.
-- **Synced lyrics**: the line being sung lights up; fix a song's timing with `[` / `]` or by syncing a line.
+- **Synced lyrics**: the line being sung lights up; scroll freely, and they follow the song again 10 seconds after
+  you stop. Fix a song's timing with `[` / `]` or by syncing a line.
 - **Japanese**: furigana above the kanji and a Japanese ⇄ romaji switch, both with grammar-aware readings (MeCab).
 - **YouTube**: search and download songs straight into your library.
 - **Playlists**: create, add, remove, rename, delete; share them as tiny CSV files of YouTube IDs.
@@ -99,8 +100,9 @@ Your music is read from `~/Music`. Press `?` for all keys.
    (iPhones don't start sound on their own).
 5. Tap **Share › Add to Home Screen**: next time, open it from there, no code needed.
 
-The terminal stays the remote: play, pause, skip and search there, or use the buttons on the page and on
-the lock screen. Songs keep moving on with the phone locked. Press `o` again to bring the music back to
+The page keeps the line being sung in the middle of the lyrics; scroll them freely, and they return to it
+10 seconds after you stop. The terminal stays the remote: play, pause, skip and search there, or use the
+buttons on the page and on the lock screen. Songs keep moving on with the phone locked. Press `o` again to bring the music back to
 the computer at the same spot.
 
 **Without Tailscale**, use an SSH tunnel: connect with `ssh -L 8337:127.0.0.1:8337 you@computer` (in
