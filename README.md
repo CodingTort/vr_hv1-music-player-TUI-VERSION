@@ -12,7 +12,7 @@
 
 </div>
 
-`vrmusic` is the terminal edition of [vr_hv1's Music Player](https://github.com/CodingTort/vr_hv1-music-client).
+`vrmusic` is the terminal edition of [vr_hv1's Music Player](https://github.com/CodingTort/vr_hv1-music-player).
 It plays your local music library with synced lyrics, works over SSH, and can send the music to your phone
 so you listen there while the terminal is the remote control.
 
@@ -34,7 +34,9 @@ so you listen there while the terminal is the remote control.
 - **Synced lyrics**: the line being sung lights up; scroll freely, and they follow the song again 10 seconds after
   you stop. Fix a song's timing with `[` / `]` or by syncing a line.
 - **Japanese**: furigana above the kanji and a Japanese ⇄ romaji switch, both with grammar-aware readings (MeCab).
-- **YouTube**: search and download songs straight into your library.
+- **YouTube**: search and download songs straight into your library, with a preview of the cover. Or paste
+  a link to a song, a playlist or an album (YouTube, YouTube Music, or any site yt-dlp supports), and
+  download one song or all of them into a new playlist (`A`).
 - **Playlists**: create, add, remove, rename, delete; share them as tiny CSV files of YouTube IDs.
 - **Album art** drawn in the terminal, a visualiser, your colour theme, mouse and touch support.
 - **Phone-friendly**: on a narrow screen it shows one pane at a time, and `t` gives a big now-playing view.
@@ -57,9 +59,9 @@ cd vrmusic-*-x86_64-linux
 installs the terminal player together with the desktop app.
 
 ```bash
-git clone https://github.com/CodingTort/vr_hv1-music-client.git
-cd vr_hv1-music-client
-make install
+git clone https://github.com/CodingTort/vr_hv1-music-player.git
+cd vr_hv1-music-player
+make install                 # about 2 minutes on an 8-core or larger machine
 ```
 
 **Optional extras**
@@ -73,7 +75,7 @@ make install
 | Furigana and romaji | `kakasi`, plus `mecab-git mecab-ipadic` from the AUR for accurate readings |
 | Japanese text in the terminal | a terminal font with Japanese characters, e.g. `noto-fonts-cjk` |
 
-The main README lists [every dependency](https://github.com/CodingTort/vr_hv1-music-client#requirements)
+The main README lists [every dependency](https://github.com/CodingTort/vr_hv1-music-player#requirements)
 with Debian/Ubuntu and Fedora package names.
 
 ## Start
@@ -152,11 +154,11 @@ lyrics; everything else is in `~/.config/lavanda/config.toml` (`phone_port` sets
 ## Privacy
 
 Lyrics are looked up on lrclib.net (title, artist and length of the playing song; turn it off in
-settings), and YouTube searches go to YouTube. The phone player only listens on the computer itself and on
+settings), and YouTube searches and pasted links go to YouTube (or the link's site), through yt-dlp. The phone player only listens on the computer itself and on
 its Tailscale address, and only lets in a phone that entered the code shown in your terminal.
 
 ## Source and license
 
-The source code is in [vr_hv1-music-client](https://github.com/CodingTort/vr_hv1-music-client) (`src/tui/`),
+The source code is in [vr_hv1-music-player](https://github.com/CodingTort/vr_hv1-music-player) (`src/tui/`),
 under the MIT license; it builds on [lavanda](https://github.com/sheep-farm/lavanda) by Flavio de Vasconcellos.
-Report bugs and ideas in [its issues](https://github.com/CodingTort/vr_hv1-music-client/issues).
+Report bugs and ideas in [its issues](https://github.com/CodingTort/vr_hv1-music-player/issues).
